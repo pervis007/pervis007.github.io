@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P. Harden — Software Developer</title>
+<meta name="description" content="Portfolio of P. Harden — software developer working in Python, C++, and automation." />
+<style>
+  :root{
+    --bg:#0b0f14; --bg2:#11161d; --card:#151c25; --line:#1f2a36;
+    --txt:#e6edf3; --muted:#8b98a5; --accent:#5eead4; --accent2:#38bdf8;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:var(--mono);font-weight:700;color:var(--accent)}
+  .navlinks{display:flex;gap:22px}
+  .navlinks a{color:var(--muted);font-size:.92rem;transition:color .2s}
+  .navlinks a:hover{color:var(--accent)}
+  @media(max-width:640px){.navlinks{display:none}}
+  /* hero */
+  header.hero{padding:96px 0 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .binary{position:absolute;inset:0;font-family:var(--mono);font-size:.8rem;color:#16202b;line-height:1.4;word-break:break-all;user-select:none;pointer-events:none;opacity:.6}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;letter-spacing:-1px;position:relative}
+  .hero .role{font-family:var(--mono);color:var(--accent);margin-top:14px;font-size:clamp(.95rem,2.4vw,1.15rem);position:relative}
+  .hero p.lead{color:var(--muted);max-width:620px;margin-top:20px;position:relative}
+  .cta{display:flex;gap:14px;margin-top:30px;position:relative;flex-wrap:wrap}
+  .btn{padding:11px 20px;border-radius:9px;font-size:.92rem;font-weight:600;border:1px solid var(--line);transition:.2s}
+  .btn.primary{background:var(--accent);color:#04211c;border-color:var(--accent)}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  /* sections */
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);color:var(--accent2);font-size:.82rem;letter-spacing:2px;text-transform:uppercase}
+  h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:8px 0 26px;letter-spacing:-.5px}
+  .about p{color:var(--muted);max-width:680px;margin-bottom:14px}
+  /* skills */
+  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .skillcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .skillcard h3{font-size:1rem;margin-bottom:12px;color:var(--accent)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.78rem;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:5px 10px;border-radius:7px}
+  /* projects */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:.2s}
+  .proj:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .proj h3{font-size:1.12rem}
+  .proj .lang{font-family:var(--mono);font-size:.74rem;color:var(--accent2);border:1px solid var(--line);padding:3px 8px;border-radius:20px}
+  .proj p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:16px}
+  .proj a.link{font-family:var(--mono);font-size:.84rem;color:var(--accent)}
+  .proj a.link:hover{text-decoration:underline}
+  /* contact */
+  .contact .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .contact a{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:.9rem;transition:.2s}
+  .contact a:hover{border-color:var(--accent);color:var(--accent)}
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:.82rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">~/p.harden</span>
+    <div class="navlinks">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="binary" aria-hidden="true">01110000 01100101 01110010 01110110 01101001 01110011 00110000 00110000 00110111 01110000 01100101 01110010 01110110 01101001 01110011 01110000 01101111 01110010 01110100 01100110 01101111 01101100 01101001 01101111 01110000 01100101 01110010 01110110 01101001 01110011 00110000 00110000 00110111 01100100 01100101 01110110 01100101 01101100 01101111 01110000 01100101 01110010 01110000 01111001 01110100 01101000 01101111 01101110 01100011 01110000 01110000</div>
+  <div class="wrap">
+    <h1>P. Harden</h1>
+    <div class="role">Software Developer · Python &amp; C++ · Automation</div>
+    <p class="lead">I build practical tools — trading bots, system utilities, and automation scripts — with a focus on clean, learnable code. Always shipping something new.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="https://github.com/pervis007" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="eyebrow">// about</div>
+    <h2>About Me</h2>
+    <p>I'm a software developer who likes turning ideas into working tools. My projects range from a multi-exchange trading bot to low-level C++ utilities and Windows automation — I enjoy the full spread, from scripting quick fixes to building something that runs on its own.</p>
+    <p>I treat every repo as a step in an ongoing learning journey: write it, break it, understand it, improve it. This site is a snapshot of what I've been building.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">// stack</div>
+    <h2>Skills &amp; Tools</h2>
+    <div class="skillgrid">
+      <div class="skillcard">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">Batch / Shell</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>Domains</h3>
+        <div class="tags">
+          <span class="tag">Trading Automation</span>
+          <span class="tag">System Tooling</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Scripting</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>Tools &amp; APIs</h3>
+        <div class="tags">
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">Kraken API</span>
+          <span class="tag">Alpaca API</span>
+          <span class="tag">Linux / Windows</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">// work</div>
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="proj">
+        <div class="top"><h3>Trading Bot</h3><span class="lang">Python</span></div>
+        <p>A multi-exchange trading bot for crypto (Kraken) and stocks (Alpaca). Supports paper-trading mode for safely testing strategies, IP-whitelisted keys, and trade/price logging.</p>
+        <a class="link" href="https://github.com/pervis007/trading-bot" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
+        <div class="top"><h3>C++ Utilities</h3><span class="lang">C++</span></div>
+        <p>A set of command-line tools, including a port scanner that probes a host's port range to report open/closed ports, and a configurable desktop file manager.</p>
+        <a class="link" href="https://github.com/pervis007/Portfolio-Personal" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
+        <div class="top"><h3>Windows Scripts</h3><span class="lang">Batch</span></div>
+        <p>A collection of Windows automation scripts for handling updates, patches, and node configuration tasks — built to streamline repetitive operational work.</p>
+        <a class="link" href="https://github.com/pervis007/Portfolio-Windows-Scripts" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
+        <div class="top"><h3>Learning Portfolio</h3><span class="lang">Python</span></div>
+        <p>A growing collection of exercises and mini-projects spanning control flow, OOP, blockchain basics, and core CS fundamentals — documenting the learning process.</p>
+        <a class="link" href="https://github.com/pervis007/Portfolio-Learning" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">// reach out</div>
+    <h2>Get In Touch</h2>
+    <p style="color:var(--muted);max-width:600px">Open to opportunities and collaboration. The fastest way to reach me:</p>
+    <div class="row">
+      <a href="mailto:p.harden32@gmail.com">✉ p.harden32@gmail.com</a>
+      <a href="https://github.com/pervis007" target="_blank" rel="noopener">⌂ github.com/pervis007</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> P. Harden · built with HTML &amp; CSS</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
