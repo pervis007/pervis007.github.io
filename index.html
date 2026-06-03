@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>P. Harden — Software Developer</title>
-<meta name="description" content="Portfolio of P. Harden — software developer working in Python, C++, and automation." />
+<title>Pervis Harden — Cybersecurity Analyst</title>
+<meta name="description" content="Pervis Harden — Cybersecurity professional, Application Security Analyst, and ethical hacker based in Orlando, FL." />
 <style>
   :root{
-    --bg:#0b0f14; --bg2:#11161d; --card:#151c25; --line:#1f2a36;
-    --txt:#e6edf3; --muted:#8b98a5; --accent:#5eead4; --accent2:#38bdf8;
+    --bg:#0a0e12; --bg2:#0f151c; --card:#131b24; --line:#1e2a36;
+    --txt:#e6edf3; --muted:#8b98a5; --accent:#22d3ee; --accent2:#4ade80; --danger:#f87171;
     --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
     --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
@@ -16,76 +16,104 @@
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
   /* nav */
-  nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
   .brand{font-family:var(--mono);font-weight:700;color:var(--accent)}
-  .navlinks{display:flex;gap:22px}
-  .navlinks a{color:var(--muted);font-size:.92rem;transition:color .2s}
+  .brand::before{content:"root@harden:~$ ";color:var(--muted);font-weight:400}
+  .navlinks{display:flex;gap:20px}
+  .navlinks a{color:var(--muted);font-size:.9rem;transition:color .2s}
   .navlinks a:hover{color:var(--accent)}
-  @media(max-width:640px){.navlinks{display:none}}
+  @media(max-width:720px){.navlinks{display:none}.brand::before{content:"~$ "}}
   /* hero */
-  header.hero{padding:96px 0 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-  .binary{position:absolute;inset:0;font-family:var(--mono);font-size:.8rem;color:#16202b;line-height:1.4;word-break:break-all;user-select:none;pointer-events:none;opacity:.6}
-  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;letter-spacing:-1px;position:relative}
-  .hero .role{font-family:var(--mono);color:var(--accent);margin-top:14px;font-size:clamp(.95rem,2.4vw,1.15rem);position:relative}
-  .hero p.lead{color:var(--muted);max-width:620px;margin-top:20px;position:relative}
+  header.hero{padding:96px 0 76px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .binary{position:absolute;inset:0;font-family:var(--mono);font-size:.78rem;color:#121b24;line-height:1.5;word-break:break-all;user-select:none;pointer-events:none}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.04;letter-spacing:-1.5px;position:relative}
+  .hero .role{font-family:var(--mono);color:var(--accent);margin-top:14px;font-size:clamp(.95rem,2.4vw,1.2rem);position:relative}
+  .hero .loc{color:var(--muted);font-family:var(--mono);font-size:.85rem;margin-top:8px;position:relative}
+  .hero p.lead{color:var(--muted);max-width:640px;margin-top:20px;position:relative}
   .cta{display:flex;gap:14px;margin-top:30px;position:relative;flex-wrap:wrap}
   .btn{padding:11px 20px;border-radius:9px;font-size:.92rem;font-weight:600;border:1px solid var(--line);transition:.2s}
-  .btn.primary{background:var(--accent);color:#04211c;border-color:var(--accent)}
-  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.primary{background:var(--accent);color:#042027;border-color:var(--accent)}
+  .btn.primary:hover{filter:brightness(1.1)}
   .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
   /* sections */
-  section{padding:72px 0;border-bottom:1px solid var(--line)}
-  .eyebrow{font-family:var(--mono);color:var(--accent2);font-size:.82rem;letter-spacing:2px;text-transform:uppercase}
-  h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:8px 0 26px;letter-spacing:-.5px}
-  .about p{color:var(--muted);max-width:680px;margin-bottom:14px}
+  section{padding:74px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);color:var(--accent2);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+  h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:8px 0 28px;letter-spacing:-.5px}
+  .about p{color:var(--muted);max-width:700px;margin-bottom:14px}
   /* skills */
-  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .skillcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
-  .skillcard h3{font-size:1rem;margin-bottom:12px;color:var(--accent)}
+  .skillcard h3{font-size:.98rem;margin-bottom:13px;color:var(--accent)}
   .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{font-family:var(--mono);font-size:.78rem;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:5px 10px;border-radius:7px}
+  .tag{font-family:var(--mono);font-size:.76rem;color:var(--muted);background:var(--bg2);border:1px solid var(--line);padding:5px 10px;border-radius:7px}
+  /* timeline */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .job{position:relative;margin-bottom:28px}
+  .job::before{content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .job .jtop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+  .job h3{font-size:1.08rem}
+  .job .co{color:var(--accent);font-weight:600}
+  .job .date{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+  .job ul{margin:10px 0 0 18px;color:var(--muted)}
+  .job ul li{font-size:.92rem;margin-bottom:5px}
   /* projects */
   .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
   .proj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:.2s}
   .proj:hover{transform:translateY(-3px);border-color:var(--accent)}
   .proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-  .proj h3{font-size:1.12rem}
-  .proj .lang{font-family:var(--mono);font-size:.74rem;color:var(--accent2);border:1px solid var(--line);padding:3px 8px;border-radius:20px}
-  .proj p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:16px}
-  .proj a.link{font-family:var(--mono);font-size:.84rem;color:var(--accent)}
+  .proj h3{font-size:1.1rem}
+  .proj .lang{font-family:var(--mono);font-size:.72rem;color:var(--accent2);border:1px solid var(--line);padding:3px 8px;border-radius:20px}
+  .proj p{color:var(--muted);font-size:.9rem;flex:1;margin-bottom:16px}
+  .proj a.link{font-family:var(--mono);font-size:.83rem;color:var(--accent)}
   .proj a.link:hover{text-decoration:underline}
+  /* two-col */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:720px){.two{grid-template-columns:1fr;gap:34px}}
+  .item{margin-bottom:18px}
+  .item h3{font-size:1.02rem}
+  .item .sub{color:var(--accent);font-family:var(--mono);font-size:.82rem}
+  .item .meta{color:var(--muted);font-size:.85rem}
+  .certlist{list-style:none}
+  .certlist li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .certlist .cn{font-weight:600}
+  .certlist .cd{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
   /* contact */
-  .contact .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
-  .contact a{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:.9rem;transition:.2s}
+  .contact .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
+  .contact a,.contact span.ci{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:.88rem;transition:.2s}
   .contact a:hover{border-color:var(--accent);color:var(--accent)}
-  footer{padding:34px 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:.82rem}
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:.8rem}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <span class="brand">~/p.harden</span>
+    <span class="brand">pervis</span>
     <div class="navlinks">
       <a href="#about">about</a>
       <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
       <a href="#projects">projects</a>
+      <a href="#certs">certs</a>
       <a href="#contact">contact</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="binary" aria-hidden="true">01110000 01100101 01110010 01110110 01101001 01110011 00110000 00110000 00110111 01110000 01100101 01110010 01110110 01101001 01110011 01110000 01101111 01110010 01110100 01100110 01101111 01101100 01101001 01101111 01110000 01100101 01110010 01110110 01101001 01110011 00110000 00110000 00110111 01100100 01100101 01110110 01100101 01101100 01101111 01110000 01100101 01110010 01110000 01111001 01110100 01101000 01101111 01101110 01100011 01110000 01110000</div>
+  <div class="binary" aria-hidden="true">01100101 01110100 01101000 01101001 01100011 01100001 01101100 00100000 01101000 01100001 01100011 01101011 01100101 01110010 00100000 01111010 01100101 01110010 01101111 00100000 01110100 01110010 01110101 01110011 01110100 00100000 01110011 01101001 01100101 01101101 00100000 01100110 01101001 01110010 01100101 01110111 01100001 01101100 01101100 00100000 01100001 01100011 01110100 01101001 01110110 01100101 00100000 01100100 01101001 01110010 01100101 01100011 01110100 01101111 01110010 01111001 00100000 01110011 01100101 01100011 01110101 01110010 01100101</div>
   <div class="wrap">
-    <h1>P. Harden</h1>
-    <div class="role">Software Developer · Python &amp; C++ · Automation</div>
-    <p class="lead">I build practical tools — trading bots, system utilities, and automation scripts — with a focus on clean, learnable code. Always shipping something new.</p>
+    <h1>Pervis Harden</h1>
+    <div class="role">Cybersecurity Analyst · Application Security · Ethical Hacker</div>
+    <div class="loc">📍 Orlando, FL</div>
+    <p class="lead">Security professional with 7+ years across enterprise infrastructure, network security, and application security. I analyze how software really behaves, enforce Zero Trust, and break things so they can be built stronger.</p>
     <div class="cta">
-      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn primary" href="#experience">View Experience</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">⬇ Download Résumé</a>
       <a class="btn ghost" href="https://github.com/pervis007" target="_blank" rel="noopener">GitHub →</a>
     </div>
   </div>
@@ -95,76 +123,161 @@
   <div class="wrap">
     <div class="eyebrow">// about</div>
     <h2>About Me</h2>
-    <p>I'm a software developer who likes turning ideas into working tools. My projects range from a multi-exchange trading bot to low-level C++ utilities and Windows automation — I enjoy the full spread, from scripting quick fixes to building something that runs on its own.</p>
-    <p>I treat every repo as a step in an ongoing learning journey: write it, break it, understand it, improve it. This site is a snapshot of what I've been building.</p>
+    <p>I'm a cybersecurity analyst with a deep systems-administration background, currently focused on application security. At ThreatLocker I analyze application and script execution behavior to make secure allow/deny decisions, investigate software through SIEM-style logs and backend diagnostics, and help tighten Zero Trust policy across distributed enterprise environments.</p>
+    <p>My foundation is hands-on infrastructure — Windows Server, Active Directory, virtualization, and disaster recovery keeping mission-critical systems at 99%+ uptime. That blend of offense-minded analysis and defensive operations is how I approach security: understand the system completely, then find where it bends. CompTIA CySA+ and Security+ certified, and always sharpening the offensive side.</p>
   </div>
 </section>
 
 <section id="skills">
   <div class="wrap">
-    <div class="eyebrow">// stack</div>
+    <div class="eyebrow">// arsenal</div>
     <h2>Skills &amp; Tools</h2>
     <div class="skillgrid">
       <div class="skillcard">
-        <h3>Languages</h3>
+        <h3>Security &amp; Defense</h3>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">C++</span>
-          <span class="tag">Batch / Shell</span>
+          <span class="tag">SIEM</span><span class="tag">Zero Trust</span><span class="tag">Network Security</span>
+          <span class="tag">Firewall Diagnostics</span><span class="tag">VPN</span><span class="tag">Compliance</span>
+          <span class="tag">Okta</span><span class="tag">Genetec</span><span class="tag">Vulnerability Analysis</span>
         </div>
       </div>
       <div class="skillcard">
-        <h3>Domains</h3>
+        <h3>Systems &amp; Identity</h3>
         <div class="tags">
-          <span class="tag">Trading Automation</span>
-          <span class="tag">System Tooling</span>
-          <span class="tag">Networking</span>
-          <span class="tag">Scripting</span>
+          <span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">Group Policy</span>
+          <span class="tag">Domain Controllers</span><span class="tag">Azure AD</span><span class="tag">Office 365</span><span class="tag">Linux</span>
         </div>
       </div>
       <div class="skillcard">
-        <h3>Tools &amp; APIs</h3>
+        <h3>Infrastructure &amp; Virtualization</h3>
         <div class="tags">
-          <span class="tag">Git / GitHub</span>
-          <span class="tag">Kraken API</span>
-          <span class="tag">Alpaca API</span>
-          <span class="tag">Linux / Windows</span>
+          <span class="tag">VMware</span><span class="tag">Hyper-V</span><span class="tag">Proxmox</span>
+          <span class="tag">VirtualBox</span><span class="tag">Disaster Recovery</span><span class="tag">High Availability</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>Tooling &amp; Scripting</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">C++</span>
+          <span class="tag">Bash / Batch</span><span class="tag">Jira</span><span class="tag">Hardware Diagnostics</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">// track record</div>
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="jtop"><h3><span class="co">Application Security Analyst</span> — ThreatLocker</h3><span class="date">Apr 2025 – Mar 2026</span></div>
+        <ul>
+          <li>Analyze application and script execution behavior to drive secure allow/deny decisions and enforce compliance.</li>
+          <li>Monitor SIEM-style logs and run backend diagnostics to investigate software behavior and potential vulnerabilities.</li>
+          <li>Partner with engineering to improve approval precision and Zero Trust policy across client environments.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jtop"><h3><span class="co">Application Technician</span> — ThreatLocker</h3><span class="date">Oct 2024 – May 2025</span></div>
+        <ul>
+          <li>Built customer-replicated virtual infrastructure with VMware and Hyper-V for advanced enterprise troubleshooting.</li>
+          <li>Captured application behavioral changes and backend execution patterns to maintain security and compliance.</li>
+          <li>Ran infrastructure-level diagnostics in a 24/7 environment and managed test labs validating policy before deployment.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jtop"><h3><span class="co">Technical Support</span> — ThreatLocker</h3><span class="date">Jul 2024 – Oct 2024</span></div>
+        <ul>
+          <li>Supported MSPs and enterprise admins with large-scale deployment and Group Policy troubleshooting.</li>
+          <li>Built virtual server and Domain Controller environments to replicate complex escalation scenarios.</li>
+          <li>Maintained 99%+ satisfaction while resolving firewall diagnostics and connectivity issues.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jtop"><h3><span class="co">Support Engineer</span> — onePOS</h3><span class="date">Aug 2022 – Jun 2024</span></div>
+        <ul>
+          <li>Delivered remote technical support for POS systems, hardware, and networking across nationwide sites.</li>
+          <li>Managed Jira queues and documented root-cause findings to improve reliability and reduce disruptions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jtop"><h3><span class="co">Jr. Systems Administrator</span> — Capstone Logistics</h3><span class="date">Jan 2017 – May 2022</span></div>
+        <ul>
+          <li>Maintained Windows Server environments, Active Directory, and warehouse systems across multiple locations.</li>
+          <li>Managed disaster recovery, backups, and uptime for business-critical transportation systems.</li>
+          <li>Handled compliance patching and standardized configurations via Group Policy for 24/7 operations.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="projects">
   <div class="wrap">
-    <div class="eyebrow">// work</div>
+    <div class="eyebrow">// lab</div>
     <h2>Projects</h2>
     <div class="projects">
 
       <div class="proj">
-        <div class="top"><h3>Trading Bot</h3><span class="lang">Python</span></div>
-        <p>A multi-exchange trading bot for crypto (Kraken) and stocks (Alpaca). Supports paper-trading mode for safely testing strategies, IP-whitelisted keys, and trade/price logging.</p>
-        <a class="link" href="https://github.com/pervis007/trading-bot" target="_blank" rel="noopener">View repo →</a>
-      </div>
-
-      <div class="proj">
-        <div class="top"><h3>C++ Utilities</h3><span class="lang">C++</span></div>
-        <p>A set of command-line tools, including a port scanner that probes a host's port range to report open/closed ports, and a configurable desktop file manager.</p>
+        <div class="top"><h3>Port Scanner</h3><span class="lang">C++</span></div>
+        <p>A command-line port scanner that probes a host's port range to identify open and closed ports — a from-scratch take on core reconnaissance tooling.</p>
         <a class="link" href="https://github.com/pervis007/Portfolio-Personal" target="_blank" rel="noopener">View repo →</a>
       </div>
 
       <div class="proj">
-        <div class="top"><h3>Windows Scripts</h3><span class="lang">Batch</span></div>
-        <p>A collection of Windows automation scripts for handling updates, patches, and node configuration tasks — built to streamline repetitive operational work.</p>
+        <div class="top"><h3>Windows Automation Scripts</h3><span class="lang">Batch</span></div>
+        <p>Operational scripts for updates, patching, and node/endpoint configuration — automating the hardening and maintenance work that keeps fleets compliant.</p>
         <a class="link" href="https://github.com/pervis007/Portfolio-Windows-Scripts" target="_blank" rel="noopener">View repo →</a>
       </div>
 
       <div class="proj">
+        <div class="top"><h3>Trading Bot</h3><span class="lang">Python</span></div>
+        <p>A multi-exchange trading bot (Kraken + Alpaca) with paper-trading mode, IP-whitelisted keys, and a security-first credential model — practical applied Python.</p>
+        <a class="link" href="https://github.com/pervis007/trading-bot" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
         <div class="top"><h3>Learning Portfolio</h3><span class="lang">Python</span></div>
-        <p>A growing collection of exercises and mini-projects spanning control flow, OOP, blockchain basics, and core CS fundamentals — documenting the learning process.</p>
+        <p>Exercises and mini-projects across fundamentals, OOP, and blockchain — documenting continuous skill-building beyond the day job.</p>
         <a class="link" href="https://github.com/pervis007/Portfolio-Learning" target="_blank" rel="noopener">View repo →</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <div class="eyebrow">// credentials</div>
+        <h2>Certifications</h2>
+        <ul class="certlist">
+          <li><span class="cn">CompTIA CySA+</span><span class="cd">Jan 2024</span></li>
+          <li><span class="cn">CompTIA Security+</span><span class="cd">Jan 2023</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">// education</div>
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Purdue Global University</h3>
+          <div class="sub">IT — Software Development</div>
+          <div class="meta">In progress</div>
+        </div>
+        <div class="item">
+          <h3>Jones High School</h3>
+          <div class="meta">Orlando, FL</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -173,16 +286,18 @@
   <div class="wrap">
     <div class="eyebrow">// reach out</div>
     <h2>Get In Touch</h2>
-    <p style="color:var(--muted);max-width:600px">Open to opportunities and collaboration. The fastest way to reach me:</p>
+    <p style="color:var(--muted);max-width:620px">Open to cybersecurity roles and collaboration. Best ways to reach me:</p>
     <div class="row">
       <a href="mailto:p.harden32@gmail.com">✉ p.harden32@gmail.com</a>
+      <a href="tel:+16893319877">☎ (689) 331-9877</a>
       <a href="https://github.com/pervis007" target="_blank" rel="noopener">⌂ github.com/pervis007</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">⬇ Résumé (PDF)</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© <span id="yr"></span> P. Harden · built with HTML &amp; CSS</div>
+  <div class="wrap">© <span id="yr"></span> Pervis Harden · Orlando, FL · secured &amp; shipped</div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
