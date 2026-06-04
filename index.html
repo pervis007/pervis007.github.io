@@ -123,7 +123,7 @@
   <div class="wrap">
     <div class="eyebrow">// about</div>
     <h2>About Me</h2>
-    <p>I'm a cybersecurity analyst with a deep systems-administration background, currently focused on application security. At ThreatLocker, I analyzed application and script execution behavior to make secure allow/deny decisions, investigate software through SIEM-style logs and backend diagnostics, and help tighten Zero Trust policy across distributed enterprise environments.</p>
+    <p>I'm a cybersecurity analyst with a deep systems-administration background and a strong focus on application security. At ThreatLocker, I analyzed application and script execution behavior to make secure allow/deny decisions, investigate software through SIEM-style logs and backend diagnostics, and help tighten Zero Trust policy across distributed enterprise environments.</p>
     <p>My foundation is hands-on infrastructure — Windows Server, Active Directory, virtualization, and disaster recovery keeping mission-critical systems at 99%+ uptime. That blend of offense-minded analysis and defensive operations is how I approach security: understand the system completely, then find where it bends. CompTIA CySA+ and Security+ certified, and always sharpening the offensive side.</p>
   </div>
 </section>
@@ -225,6 +225,24 @@
     <div class="eyebrow">// lab</div>
     <h2>Projects</h2>
     <div class="projects">
+
+      <div class="proj">
+        <div class="top"><h3>Cybersecurity Homelab — "Namek"</h3><span class="lang">Homelab</span></div>
+        <p>An isolated purple-team lab on Fedora + QEMU/KVM: a Kali attacker, a Windows 11 target, and an Ubuntu server running Wazuh SIEM + Active Directory on a fully segmented, air-gapped network.</p>
+        <a class="link" href="https://github.com/pervis007/cybersecurity-homelab" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
+        <div class="top"><h3>Wazuh SIEM Deployment</h3><span class="lang">SIEM</span></div>
+        <p>A full Wazuh stack (manager + indexer + dashboard) on Ubuntu Server, with agents deployed to Kali and Windows 11 — centralized log collection, detection, and MITRE ATT&amp;CK-mapped alerting.</p>
+        <a class="link" href="https://github.com/pervis007/cybersecurity-wazuh-siem" target="_blank" rel="noopener">View repo →</a>
+      </div>
+
+      <div class="proj">
+        <div class="top"><h3>SharePoint Hash Catalog</h3><span class="lang">PowerShell</span></div>
+        <p>PowerShell automation that installs the full SharePoint Server 2016 update catalog (~160 KBs) so every application hash — past and future — can be accounted for in a Zero Trust allowlisting workflow.</p>
+        <a class="link" href="https://github.com/pervis007/SharePoint-Scripts" target="_blank" rel="noopener">View repo →</a>
+      </div>
 
       <div class="proj">
         <div class="top"><h3>Port Scanner</h3><span class="lang">C++</span></div>
